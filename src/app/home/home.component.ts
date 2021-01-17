@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
-import {filter, map} from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {PostService} from '../post.service';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
+import {Observable} from 'rxjs';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import {Observable, of, pipe} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -9,27 +12,72 @@ import {Observable, of, pipe} from "rxjs";
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
 
-  cards: Observable<any>;
-  n:number = 10;
+  cards: any = [];
+  cards2: any = [];
+  flag = false;
+  mode: ProgressSpinnerMode = 'indeterminate';
+  dataRefresher: any;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
-    this.cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-      map(() => {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      })
-    );
+  facebookUrl = 'https://www.facebook.com';
+  instagramUrl = 'https://www.instagram.com';
+  twitterUrl = 'https://twitter.com';
+  telegramUrl = 'https://web.telegram.org/'
 
-    // for (let i = 0; i < this.n; i++) {
-    //   this.cards.pipe(map(() => {
-    //     { title: 'Card 1', cols: 1, rows: 1 }
-    //   }));
-    // }
+  constructor(private postService: PostService, private breakpointObserver: BreakpointObserver) {
   }
+
+  ngOnInit(): void {
+    this.getData();
+    this.refreshData();
+    console.log(this.cards);
+
+  }
+
+  async getData(): Promise<any>{
+
+    this.postService.getPosts().subscribe(async res => {
+        for (const i of res) {
+          this.cards.push({link: i[0], caption: i[2]});
+          console.log(i[2]);
+        }
+        await this.delay(5000);
+        this.flag = true;
+        console.log(this.cards);
+      },
+      console.error
+    );
+  }
+
+  refreshData(): any{
+    this.dataRefresher = setInterval(() => {
+      this.postService.getPosts().subscribe(res => {
+          this.cards2 = [];
+          for (const i of res) {
+            this.cards2.push({link: i[0], caption: i[2]});
+            console.log(i[2]);
+          }
+          this.cards = this.cards2;
+          console.log(this.cards);
+        },
+        console.error
+      );
+    }, 60000);
+  }
+
+  ngOnDestroy(): void{
+    if (this.dataRefresher){
+      clearInterval(this.dataRefresher);
+    }
+  }
+
+  fun(): void{
+    // console.log('Nadeeja');
+  }
+
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+
 }

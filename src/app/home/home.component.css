@@ -1,25 +1,139 @@
-.grid-container {
-  margin: 20px;
-}
-
-.dashboard-card {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-}
-
 .more-button {
   position: absolute;
   top: 5px;
   right: 10px;
 }
 
-.dashboard-card-content {
-  text-align: center;
+.mat-toolbar{
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  background-color: #004c40;
+  height: 100px;
+}
+
+.carousel{
+  position: relative;
+  z-index: 1;
+  padding-left: 10%;
+  padding-right: 10%;
+  /*max-height: border-box;*/
+}
+
+.content-class{
+  background-color: #f5ffff;
 }
 
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.example-card {
+  /*max-width: 400px;*/
+  background-color: white;
+  text-align: center;
+}
+
+.example-header-image {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/600px-Telegram_logo.svg.png');
+  background-size: cover;
+}
+
+.example-card-image{
+  max-width: fit-content;
+  height: auto;
+  max-height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 95px;
+  background-color: #004c40;
+  color: white;
+  text-align: center;
+  margin: 0px;
+  /*align-items: center;*/
+}
+
+.example-margin {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+:host /deep/ mat-progress-spinner circle{
+  stroke: #2f6f72;
+}
+
+.icon-class{
+  width: 40px;
+  padding: 10px;
+}
+
+.logo-class{
+  width: 110px;
+}
+
+.name-class{
+  font-size: 40px;
+  font-family: "papyrus";
+  color: white;
+}
+
+.name-class-footer{
+  font-size: 25px;
+  font-family: "papyrus";
+  color: white;
+}
+
+.tag-line-class-footer{
+  font-size: 12.5px;
+  font-family: "Georgia";
+  color: white;
+}
+
+.mat-card-title{
+  font-family: "Open Sans";
+  font-size: x-large;
+}
+
+.mat-card-subtitle{
+  font-family: "Georgia";
+}
+
+.outline {
+  border-style: solid;
+  border-width: thin;
+}
+
+.mat-list .mat-list-item {
+  height: 20px; /* default is 72px */
+}
+
+.icon-class-footer{
+  width: 25px;
+  padding-top: 5px;
+}
+
+:host ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content {
+  justify-content: center;
+}
+
+.list-class{
+  padding-top: 10px;
+}
+
+.p{
+  font-family: "Geo";
+}
+
+.top-class{
+  font-family: "Open Sans";
+  font-size: x-large;
+  padding-left: 10%;
 }
