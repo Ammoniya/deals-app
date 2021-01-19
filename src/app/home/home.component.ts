@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     // // const isLargeScreen = breakpointObserver.isMatched('(max-width: 1000px)');
 
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
 
     if (this.innerWidth > 1000){
       this.cellsToShow = 5;
@@ -50,7 +49,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getData();
     this.refreshData();
-    console.log(this.cards);
 
   }
 
@@ -59,11 +57,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.postService.getPosts().subscribe(async res => {
         for (const i of res) {
           this.cards.push({link: i[0], caption: i[2]});
-          console.log(i[2]);
         }
         await this.delay(5000);
         this.flag = true;
-        console.log(this.cards);
       },
       console.error
     );
@@ -75,10 +71,8 @@ export class HomeComponent implements OnInit, OnDestroy {
           this.cards2 = [];
           for (const i of res) {
             this.cards2.push({link: i[0], caption: i[2]});
-            console.log(i[2]);
           }
           this.cards = this.cards2;
-          console.log(this.cards);
         },
         console.error
       );
@@ -92,7 +86,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   fun(): void{
-    // console.log('Nadeeja');
   }
 
   delay(ms: number) {
