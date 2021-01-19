@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {PostService} from '../post.service';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 import {Observable} from 'rxjs';
@@ -23,9 +23,28 @@ export class HomeComponent implements OnInit, OnDestroy {
   facebookUrl = 'https://www.facebook.com';
   instagramUrl = 'https://www.instagram.com';
   twitterUrl = 'https://twitter.com';
-  telegramUrl = 'https://web.telegram.org/'
+  telegramUrl = 'https://web.telegram.org/';
+  cellsToShow: number;
+  innerWidth: any;
 
   constructor(private postService: PostService, private breakpointObserver: BreakpointObserver) {
+    // const isSmallScreen = breakpointObserver.isMatched('(max-width: 599px)');
+    // // const isLargeScreen = breakpointObserver.isMatched('(max-width: 1000px)');
+
+    this.innerWidth = window.innerWidth;
+    console.log(this.innerWidth);
+
+    if (this.innerWidth > 1000){
+      this.cellsToShow = 5;
+    }
+    else{
+      this.cellsToShow = 1;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.innerWidth = window.innerWidth;
   }
 
   ngOnInit(): void {

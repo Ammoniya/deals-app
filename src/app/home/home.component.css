@@ -29,7 +29,7 @@
 }
 
 .example-card {
-  /*max-width: 400px;*/
+  /*max-width: 200px;*/
   background-color: white;
   text-align: center;
 }
@@ -128,12 +128,70 @@
   padding-top: 10px;
 }
 
-.p{
-  font-family: "Geo";
+p{
+  font-family: "Arial";
 }
 
 .top-class{
   font-family: "Open Sans";
   font-size: x-large;
   padding-left: 10%;
+}
+
+.top-class-less{
+  font-family: "Open Sans";
+  font-size: small;
+  padding-left: 10%;
+}
+
+.less .top-class{
+    font-family: "Open Sans";
+    font-size: large;
+    padding-left: 10%;
+}
+
+.less mat-card{
+  width: 69%;
+}
+
+.less .mat-card-title{
+  font-family: "Open Sans";
+  font-size: large;
+}
+
+.less .mat-card-subtitle{
+  font-family: "Georgia";
+  font-size: medium;
+}
+
+.less p{
+  font-family: "Arial";
+  font-size: 14px;
+}
+
+.less .logo-class{
+  width: 50px;
+}
+
+.less .mat-toolbar{
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  background-color: #004c40;
+  height: 50px;
+}
+
+.less .name-class{
+  font-size: 20px;
+  font-family: "papyrus";
+  color: white;
+}
+
+.less .icon-class{
+  width: 20px;
+  padding: 5px;
+}
+
+.progress-less{
+  width: 128px;
 }

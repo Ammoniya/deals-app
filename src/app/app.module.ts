@@ -29,7 +29,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeComponent
   ],
     imports: [
         BrowserModule,
@@ -49,7 +49,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
         MatProgressSpinnerModule,
         MatTooltipModule,
         MatListModule,
-      MatDividerModule
+        MatDividerModule
     ],
   providers: [PostService, Globals],
   bootstrap: [AppComponent]
