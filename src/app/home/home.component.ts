@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         },
         console.error
       );
-    }, 600000);
+    }, 60000);
   }
 
   ngOnDestroy(): void{
