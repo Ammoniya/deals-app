@@ -20,16 +20,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   mode: ProgressSpinnerMode = 'indeterminate';
   dataRefresher: any;
 
-  facebookUrl = 'https://www.facebook.com';
-  instagramUrl = 'https://www.instagram.com';
-  twitterUrl = 'https://twitter.com';
+  facebookUrl = 'https://www.facebook.com/Offerte-Nerd-102054568555199';
+  instagramUrl = 'https://www.instagram.com/offerte_nerd/';
+  twitterUrl = 'https://twitter.com/NerdOfferte';
   telegramUrl = 'https://web.telegram.org/';
   cellsToShow: number;
   innerWidth: any;
 
-  constructor(private postService: PostService, private breakpointObserver: BreakpointObserver) {
-    // const isSmallScreen = breakpointObserver.isMatched('(max-width: 599px)');
-    // // const isLargeScreen = breakpointObserver.isMatched('(max-width: 1000px)');
+  constructor(private postService: PostService) {
 
     this.innerWidth = window.innerWidth;
 
@@ -76,7 +74,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         },
         console.error
       );
-    }, 60000);
+    }, 600000);
   }
 
   ngOnDestroy(): void{

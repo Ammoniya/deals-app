@@ -64,6 +64,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 240px;
 }
 
 :host /deep/ mat-progress-spinner circle{
@@ -192,6 +193,10 @@ p{
   padding: 5px;
 }
 
-.progress-less{
+.example-margin-less{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 128px;
 }

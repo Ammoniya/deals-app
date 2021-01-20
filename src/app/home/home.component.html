@@ -38,7 +38,7 @@
                 {{item.caption[6]}} <del>{{item.caption[7]}}</del> <br>
                 {{item.caption[8]}} {{item.caption[9]}} <br>
                 <b>{{item.caption[10]}}</b> <br>
-                {{item.caption[11]}} <a href="url">{{item.caption[12]}}</a>
+                {{item.caption[11]}} <a href="{{item.caption[12]}}" target="_blank">{{item.caption[12]}}</a>
               </p>
             </mat-card-content>
           </mat-card>
@@ -109,7 +109,7 @@
                 {{item.caption[6]}} <del>{{item.caption[7]}}</del> <br>
                 {{item.caption[8]}} {{item.caption[9]}} <br>
                 <b>{{item.caption[10]}}</b> <br>
-                {{item.caption[11]}} <a href="url">{{item.caption[12]}}</a>
+                {{item.caption[11]}} <a href="{{item.caption[12]}}" target="_blank">{{item.caption[12]}}</a>
               </p>
             </mat-card-content>
           </mat-card>
@@ -146,10 +146,10 @@
 
 <div *ngIf="flag==false">
   <div *ngIf="innerWidth>1000">
-    <img class="example-margin" src="/assets/progress.gif" />
+    <img class="example-margin" src="/assets/progress2.gif" />
   </div>
 
   <div *ngIf="innerWidth<=1000">
-    <img class="example-margin progress-less" src="/assets/progress.gif" />
+    <img class="example-margin-less" src="/assets/progress2.gif" />
   </div>
 </div>
