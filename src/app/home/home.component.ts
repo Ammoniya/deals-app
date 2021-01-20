@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   facebookUrl = 'https://www.facebook.com/Offerte-Nerd-102054568555199';
   instagramUrl = 'https://www.instagram.com/offerte_nerd/';
   twitterUrl = 'https://twitter.com/NerdOfferte';
-  telegramUrl = 'https://web.telegram.org/';
+  telegramUrl = 'https://t.me/offerte_nerd';
   cellsToShow: number;
   innerWidth: any;
 
