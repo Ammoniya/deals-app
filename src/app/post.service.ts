@@ -11,12 +11,10 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  // private static _handleError(err: HttpErrorResponse | any): any {
-  //   return Observable.throw(err.message || 'Error: Unable to complete request.');
-  // }
+  private res: any;
 
   getPosts(): Observable<any> {
-    console.log(this.http.get<any>(`${API_URL}/deals`));
+    console.log('Nadeeja');
     return this.http.get<any>(`${API_URL}/deals`);
   }
 }

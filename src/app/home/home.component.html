@@ -1,5 +1,7 @@
 <div *ngIf="flag==true">
 
+<!--  <img [src]="imgP"/>-->
+
   <div *ngIf="innerWidth>1000">
     <mat-toolbar>
       <img class="logo-class" src="assets/logo.png">
@@ -29,13 +31,11 @@
               <mat-card-subtitle><i>Di Offerte Nerd</i></mat-card-subtitle>
             </mat-card-header>
             <br>
-            <div class="example-card-image"><img mat-card-image src={{item.link}} alt="Photo of a Shiba Inu"></div>
+            <div class="example-card-image"><img mat-card-image [src]=item[0]></div>
             <mat-card-content>
-              <p>
-                {{item.caption[0]}} <b>{{item.caption[1]}}</b> <br><br>
-                {{item.caption[2]}} {{item.caption[3]}} <b>{{item.caption[4]}}</b> {{item.caption[5]}} {{item.caption[6]}} <br><br>
-                {{item.caption[7]}} <a href="{{item.caption[8]}}" target="_blank">{{item.caption[8]}}</a>
-              </p>
+              <div [innerHTML]="item[1]"></div>
+              <br>
+              {{item[2]}} <a href="{{item[3]}}" target="_blank">{{item[3]}}</a>
             </mat-card-content>
           </mat-card>
         </div>
@@ -96,13 +96,11 @@
               <mat-card-subtitle><i>Di Offerte Nerd</i></mat-card-subtitle>
             </mat-card-header>
             <br>
-            <div class="example-card-image"><img mat-card-image src={{item.link}} alt="Photo of a Shiba Inu"></div>
+            <div class="example-card-image"><img mat-card-image [src]=item[0]></div>
             <mat-card-content>
-              <p>
-                {{item.caption[0]}} <b>{{item.caption[1]}}</b> <br><br>
-                {{item.caption[2]}} {{item.caption[3]}} <b>{{item.caption[4]}}</b> {{item.caption[5]}} {{item.caption[6]}} <br><br>
-                {{item.caption[7]}} <a href="{{item.caption[8]}}" target="_blank">{{item.caption[8]}}</a>
-              </p>
+              <div [innerHTML]="item[1]"></div>
+              <br>
+              {{item[2]}} <a href="{{item[3]}}" target="_blank">{{item[3]}}</a>
             </mat-card-content>
           </mat-card>
         </div>
