@@ -14,19 +14,19 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   cards: any = [];
   cards2: any = [];
-  // flag = false;
-  flag = true;
+  flag = false;
   mode: ProgressSpinnerMode = 'indeterminate';
   dataRefresher: any;
   imgP: any;
-  S = 'Nadeeja <br /> Pirisyala';
 
   facebookUrl = 'https://www.facebook.com/Offerte-Nerd-102054568555199';
   instagramUrl = 'https://www.instagram.com/offerte_nerd/';
   twitterUrl = 'https://twitter.com/NerdOfferte';
   telegramUrl = 'https://t.me/offerte_nerd';
   cellsToShow: number;
-  innerWidth: any;
+  carouselHeight: number;
+  innerWidth: number;
+  innerHeight: number;
   base64: any;
   url: any;
   reader: any;
@@ -37,22 +37,60 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private postService: PostService, private sanitizer: DomSanitizer) {
 
     this.innerWidth = window.innerWidth;
+    this.innerHeight = window.innerHeight;
 
-    if (this.innerWidth > 1000){
+    console.log('innerWidth - ', this.innerWidth);
+    console.log('innerHeight - ', this.innerHeight);
+
+    if (this.innerWidth > 1024){
       this.cellsToShow = 5;
     }
+    // else if (this.innerWidth > 700){
+    //   this.cellsToShow = 2;
+    // }
     else{
       this.cellsToShow = 1;
     }
+
+    if (this.innerHeight > 800){
+      this.carouselHeight = this.innerHeight;
+    }
+    else{
+      this.carouselHeight = 800;
+    }
+
+    console.log(this.cellsToShow);
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     this.innerWidth = window.innerWidth;
+    this.innerHeight = window.innerHeight;
+
+    console.log('innerWidth - ', this.innerWidth);
+    console.log('innerHeight - ', this.innerHeight);
+
+    if (this.innerWidth > 1024){
+      this.cellsToShow = 5;
+    }
+    // else if (this.innerWidth > 700){
+    //   this.cellsToShow = 2;
+    // }
+    else{
+      this.cellsToShow = 1;
+    }
+
+    if (this.innerHeight > 800){
+      this.carouselHeight = this.innerHeight;
+    }
+    else{
+      this.carouselHeight = 800;
+    }
+
+    console.log(this.cellsToShow);
   }
 
   ngOnInit(): void {
-    this.S += '<br /> Kumari';
     this.getData();
     this.refreshData();
 
@@ -60,18 +98,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   async getData(): Promise<any>{
     this.postService.getPosts().subscribe(async res => {
-      console.log(res[0][0].slice(2, -1));
+      console.log('len - ', res.length);
       for (let i = 0; i < res.length; i++){
         const blob = base64StringToBlob(res[i][0].slice(2, -1), this.contentType);
         const objectURL = URL.createObjectURL(blob);
         this.imgP = this.sanitizer.bypassSecurityTrustUrl(objectURL);
         this.caption = res[i][1].replace(this.re, '<br />');
-        // res[i][1] += '<br /> Nadeeja';
-        console.log(this.caption);
+        await this.delay(5000);
+        this.flag = true;
         this.cards.push([this.imgP, this.caption, res[i][2], res[i][3]]);
       }
-      await this.delay(5000);
-      this.flag = true;
       },
       console.error
     );
@@ -86,8 +122,6 @@ export class HomeComponent implements OnInit, OnDestroy {
           const objectURL = URL.createObjectURL(blob);
           this.imgP = this.sanitizer.bypassSecurityTrustUrl(objectURL);
           this.caption = res[j][1].replace(this.re, '<br />');
-          // res[j][1] += '<br /> Nadeeja';
-          console.log(this.caption);
           this.cards2.push([this.imgP, this.caption, res[j][2], res[j][3]]);
           }
         this.cards = this.cards2;

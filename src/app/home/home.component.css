@@ -1,7 +1,7 @@
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
+.flag-true {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .mat-toolbar{
@@ -9,7 +9,77 @@
   position: sticky;
   z-index: 2;
   background-color: #004c40;
-  height: 100px;
+  height: 12%;
+}
+
+.logo-class{
+  height: 100%;
+}
+
+.name-class{
+  font-size: 4vh;
+  font-family: "papyrus", serif;
+  color: white;
+}
+
+.less .name-class{
+  font-size: 3vh;
+  font-family: "papyrus", serif;
+  color: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.social-icon-panel{
+  width: 12%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  .social-icon-panel{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.social-icon-class{
+}
+
+.icon-class{
+  width: 22.22%;
+  padding-right:5.55%;
+  padding-left: 5.55%;
+}
+
+.content-class{
+  background-color: #f5ffff;
+  height: auto;
+}
+
+.top-class{
+  font-family: "Open Sans", serif;
+  font-size: x-large;
+  padding-left: 10%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .top-class{
+    font-family: "Open Sans", serif;
+    font-size: large;
+    padding-left: 10%;
+  }
 }
 
 .carousel{
@@ -17,21 +87,23 @@
   z-index: 1;
   padding-left: 10%;
   padding-right: 10%;
-  /*max-height: border-box;*/
 }
 
-.content-class{
-  background-color: #f5ffff;
+.carousel-cells{
+  height: auto !important;
 }
 
-.example-spacer {
-  flex: 1 1 auto;
+.carousel-cell{
+  height: auto !important;
 }
 
 .example-card {
-  /*max-width: 200px;*/
-  background-color: white;
-  text-align: center;
+  max-width: 70vw;
+  text-align: left;
+  overflow-wrap: break-word;
+  height: auto !important;
+  border-style: solid;
+  border-width: thin;
 }
 
 .example-header-image {
@@ -39,24 +111,97 @@
   background-size: cover;
 }
 
+.mat-card-title{
+  font-family: "Open Sans", serif;
+  font-size: x-large;
+}
+
+.mat-card-subtitle{
+  font-family: "Georgia", serif;
+}
+
+@media only screen and (max-width: 700px) {
+  .mat-card-title{
+    font-family: "Open Sans", serif;
+    font-size: large;
+  }
+
+  .mat-card-subtitle{
+    font-family: "Georgia", serif;
+    font-size: medium;
+  }
+}
+
 .example-card-image{
   max-width: fit-content;
   height: auto;
-  max-height: 500px;
+  /*max-height: 500px;*/
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 
 .footer {
+  margin-top: auto;
+  position: relative;
   bottom: 0;
   width: 100%;
-  height: 95px;
+  height: 15%;
   background-color: #004c40;
-  color: white;
   text-align: center;
-  margin: 0px;
-  /*align-items: center;*/
+}
+
+.list-class{
+  height: 60%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.name-class-footer{
+  font-size: 4vh;
+  font-family: "papyrus", serif;
+  color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .name-class-footer{
+    font-size: 3vh;
+    font-family: "papyrus", serif;
+    color: white;
+  }
+}
+
+.tag-line-class-footer{
+  font-size: 2vh;
+  font-family: "Georgia", serif;
+  color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .tag-line-class-footer{
+    font-size: 1.5vh;
+    font-family: "Georgia", serif;
+    color: white;
+  }
+}
+
+.social-icon-panel-footer{
+  height: 40%;
+  width: auto;
+}
+
+.icon-class-footer{
+  width: 3vh;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  padding-top: 1.5vh;
+}
+
+p{
+  font-family: "Arial", serif;
 }
 
 .example-margin {
@@ -67,130 +212,12 @@
   width: 240px;
 }
 
-:host /deep/ mat-progress-spinner circle{
-  stroke: #2f6f72;
-}
-
-.icon-class{
-  width: 40px;
-  padding: 10px;
-}
-
-.logo-class{
-  width: 110px;
-}
-
-.name-class{
-  font-size: 40px;
-  font-family: "papyrus";
-  color: white;
-}
-
-.name-class-footer{
-  font-size: 25px;
-  font-family: "papyrus";
-  color: white;
-}
-
-.tag-line-class-footer{
-  font-size: 12.5px;
-  font-family: "Georgia";
-  color: white;
-}
-
-.mat-card-title{
-  font-family: "Open Sans";
-  font-size: x-large;
-}
-
-.mat-card-subtitle{
-  font-family: "Georgia";
-}
-
-.outline {
-  border-style: solid;
-  border-width: thin;
-}
-
-.mat-list .mat-list-item {
-  height: 20px; /* default is 72px */
-}
-
-.icon-class-footer{
-  width: 25px;
-  padding-top: 5px;
-}
-
-:host ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content {
-  justify-content: center;
-}
-
-.list-class{
-  padding-top: 10px;
-}
-
-p{
-  font-family: "Arial";
-}
-
-.top-class{
-  font-family: "Open Sans";
-  font-size: x-large;
-  padding-left: 10%;
-}
-
-.less .top-class{
-    font-family: "Open Sans";
-    font-size: large;
-    padding-left: 10%;
-}
-
-.less mat-card{
-  width: 69%;
-}
-
-.less .mat-card-title{
-  font-family: "Open Sans";
-  font-size: large;
-}
-
-.less .mat-card-subtitle{
-  font-family: "Georgia";
-  font-size: medium;
-}
-
-.less p{
-  font-family: "Arial";
-  font-size: 14px;
-}
-
-.less .logo-class{
-  width: 50px;
-}
-
-.less .mat-toolbar{
-  top: 0;
-  position: sticky;
-  z-index: 2;
-  background-color: #004c40;
-  height: 50px;
-}
-
-.less .name-class{
-  font-size: 20px;
-  font-family: "papyrus";
-  color: white;
-}
-
-.less .icon-class{
-  width: 20px;
-  padding: 5px;
-}
-
-.example-margin-less{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 128px;
+@media only screen and (max-width: 1024px) {
+  .example-margin{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 128px;
+  }
 }

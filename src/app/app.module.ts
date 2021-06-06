@@ -18,7 +18,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 
-
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {PostService} from './post.service';
@@ -29,7 +28,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
     imports: [
         BrowserModule,
@@ -54,4 +53,5 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   providers: [PostService, Globals],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

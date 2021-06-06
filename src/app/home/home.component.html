@@ -1,145 +1,79 @@
-<div *ngIf="flag==true">
-
-<!--  <img [src]="imgP"/>-->
-
-  <div *ngIf="innerWidth>1000">
-    <mat-toolbar>
-      <img class="logo-class" src="assets/logo.png">
-      <span class="name-class"><b>Offerte Nerd</b></span>
-      <span class="example-spacer"></span>
-      <a [href]="facebookUrl" target="_blank">
-        <img class="icon-class" src="assets/facebook.png">
-      </a>
-      <a [href]="instagramUrl" target="_blank">
-        <img class="icon-class" src="assets/instagram.webp">
-      </a>
-      <a [href]="twitterUrl" target="_blank">
-        <img class="icon-class" src="assets/twitter.webp">
-      </a>
-    </mat-toolbar>
-
-    <div class="content-class">
-      <br>
-      <div class="top-class"><b>Le 10 Migliori Offerte</b></div>
-      <br>
-      <carousel [dots]="true" [cellsToShow]="5" [height]="700" [autoplay]="true" [autoplayInterval]="2000" [borderRadius]="2">
-        <div class="carousel-cell" *ngFor="let item of cards; index as i; trackBy: fun">
-          <mat-card class="example-card" class="mat-elevation-z0 outline">
-            <mat-card-header>
-              <a mat-card-avatar class="example-header-image" [href]="telegramUrl" target="_blank"></a>
-              <mat-card-title><b>Ultime Offerte</b></mat-card-title>
-              <mat-card-subtitle><i>Di Offerte Nerd</i></mat-card-subtitle>
-            </mat-card-header>
-            <br>
-            <div class="example-card-image"><img mat-card-image [src]=item[0]></div>
-            <mat-card-content>
-              <div [innerHTML]="item[1]"></div>
-              <br>
-              {{item[2]}} <a href="{{item[3]}}" target="_blank">{{item[3]}}</a>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div hidden></div>
-      </carousel>
-    </div>
-
-    <div class="footer">
-
-      <div class="list-class">
-        <mat-list role="list">
-          <mat-list-item role="listitem"><span class="name-class-footer"><b>Offerte Nerd</b></span></mat-list-item>
-          <mat-list-item role="listitem"><span class="tag-line-class-footer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Proteggi il tuo portafoglio!</i></span></mat-list-item>
-        </mat-list>
-      </div>
-
-      <a [href]="facebookUrl" target="_blank">
-        <img class="icon-class-footer" src="assets/facebook.png">
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a [href]="instagramUrl" target="_blank">
-        <img class="icon-class-footer" src="assets/instagram.webp">
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a [href]="twitterUrl" target="_blank">
-        <img class="icon-class-footer" src="assets/twitter.webp">
-      </a>
-
-    </div>
-  </div>
-
-  <div class="less" *ngIf="innerWidth<=1000">
-    <mat-toolbar>
-      <img class="logo-class" src="assets/logo.png">
-      <span class="name-class"><b>Offerte Nerd</b></span>
-      <span class="example-spacer"></span>
-      <a [href]="facebookUrl" target="_blank">
-        <img class="icon-class" src="assets/facebook.png">
-      </a>
-      <a [href]="instagramUrl" target="_blank">
-        <img class="icon-class" src="assets/instagram.webp">
-      </a>
-      <a [href]="twitterUrl" target="_blank">
-        <img class="icon-class" src="assets/twitter.webp">
-      </a>
-    </mat-toolbar>
-
-    <div class="content-class">
-      <br>
-      <div class="top-class"><b>Le 10 Migliori Offerte</b></div>
-      <br>
-      <carousel [dots]="true" [cellsToShow]="1" [height]="700" [autoplay]="true" [autoplayInterval]="2000" [borderRadius]="2">
-        <div class="carousel-cell" *ngFor="let item of cards; index as i; trackBy: fun">
-          <mat-card class="example-card" class="mat-elevation-z0 outline">
-            <mat-card-header>
-              <a mat-card-avatar class="example-header-image" [href]="telegramUrl" target="_blank"></a>
-              <mat-card-title><b>Ultime Offerte</b></mat-card-title>
-              <mat-card-subtitle><i>Di Offerte Nerd</i></mat-card-subtitle>
-            </mat-card-header>
-            <br>
-            <div class="example-card-image"><img mat-card-image [src]=item[0]></div>
-            <mat-card-content>
-              <div [innerHTML]="item[1]"></div>
-              <br>
-              {{item[2]}} <a href="{{item[3]}}" target="_blank">{{item[3]}}</a>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div hidden></div>
-      </carousel>
-    </div>
-
-    <div class="footer">
-
-      <div class="list-class">
-        <mat-list role="list">
-          <mat-list-item role="listitem"><span class="name-class-footer"><b>Offerte Nerd</b></span></mat-list-item>
-          <mat-list-item role="listitem"><span class="tag-line-class-footer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Proteggi il tuo portafoglio!</i></span></mat-list-item>
-        </mat-list>
-      </div>
-
-      <a [href]="facebookUrl" target="_blank">
-        <img class="icon-class-footer" src="assets/facebook.png">
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a [href]="instagramUrl" target="_blank">
-        <img class="icon-class-footer" src="assets/instagram.webp">
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a [href]="twitterUrl" target="_blank">
-        <img class="icon-class-footer" src="assets/twitter.webp">
-      </a>
-
-    </div>
-  </div>
-
+<div *ngIf="flag==false">
+  <img class="example-margin" src="/assets/progress2.gif" alt=""/>
 </div>
 
-<div *ngIf="flag==false">
-  <div *ngIf="innerWidth>1000">
-    <img class="example-margin" src="/assets/progress2.gif" />
+<mat-toolbar>
+  <img class="logo-class" src="assets/logo.png" alt="">
+
+  <div *ngIf="innerWidth>500">
+    <span class="name-class"><b>Offerte Nerd</b></span>
+  </div>
+  <div class="less" *ngIf="innerWidth<=500">
+    <span class="name-class"><b>Offerte <br> Nerd</b></span>
   </div>
 
-  <div *ngIf="innerWidth<=1000">
-    <img class="example-margin-less" src="/assets/progress2.gif" />
+  <span class="example-spacer"></span>
+
+  <div class="social-icon-panel">
+    <div class="social-icon-class">
+      <a [href]="facebookUrl" target="_blank">
+        <img class="icon-class" src="assets/facebook.png" alt="">
+      </a>
+      <a [href]="instagramUrl" target="_blank">
+        <img class="icon-class" src="assets/instagram.webp" alt="">
+      </a>
+      <a [href]="twitterUrl" target="_blank">
+        <img class="icon-class" src="assets/twitter.webp" alt="">
+      </a>
+    </div>
   </div>
+</mat-toolbar>
+
+<div class="content-class">
+  <br>
+  <div class="top-class"><b>Le 10 Migliori Offerte</b></div>
+  <br>
+
+  <carousel [dots]="true" [cellsToShow]=cellsToShow [height]="carouselHeight" [autoplay]="false"
+            [autoplayInterval]="2000"
+            [borderRadius]="2" [pauseOnHover]="true">
+    <div class="carousel-cell" *ngFor="let item of cards; index as i; trackBy: fun">
+      <mat-card class="example-card mat-elevation-z0">
+        <mat-card-header>
+          <a mat-card-avatar class="example-header-image" [href]="telegramUrl" target="_blank"></a>
+          <mat-card-title><b>Ultime Offerte</b></mat-card-title>
+          <mat-card-subtitle><i>Di Offerte Nerd</i></mat-card-subtitle>
+        </mat-card-header>
+        <br>
+        <div class="example-card-image"><img mat-card-image [src]=item[0] alt=""></div>
+        <mat-card-content>
+          <div [innerHTML]="item[1]"></div>
+          <br>
+          {{item[2]}} <a href="{{item[3]}}" target="_blank">{{item[3]}}</a>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div hidden></div>
+  </carousel>
+</div>
+
+<div class="footer">
+
+  <div class="list-class">
+    <span class="name-class-footer"><b>Offerte Nerd</b></span>
+    <span class="tag-line-class-footer"><i>Proteggi il tuo portafoglio!</i></span>
+  </div>
+
+  <div class="social-icon-panel-footer">
+    <a [href]="facebookUrl" target="_blank">
+      <img class="icon-class-footer" src="assets/facebook.png" alt="">
+    </a>
+    <a [href]="instagramUrl" target="_blank">
+      <img class="icon-class-footer" src="assets/instagram.webp" alt="">
+    </a>
+    <a [href]="twitterUrl" target="_blank">
+      <img class="icon-class-footer" src="assets/twitter.webp" alt="">
+    </a>
+  </div>
+
 </div>
