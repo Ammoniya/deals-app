@@ -39,8 +39,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.innerWidth = window.innerWidth;
     this.innerHeight = window.innerHeight;
 
-    console.log('innerWidth - ', this.innerWidth);
-    console.log('innerHeight - ', this.innerHeight);
+    // console.log('innerWidth - ', this.innerWidth);
+    // console.log('innerHeight - ', this.innerHeight);
 
     if (this.innerWidth > 1024){
       this.cellsToShow = 5;
@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.carouselHeight = 800;
     }
 
-    console.log(this.cellsToShow);
+    // console.log(this.cellsToShow);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -67,8 +67,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.innerWidth = window.innerWidth;
     this.innerHeight = window.innerHeight;
 
-    console.log('innerWidth - ', this.innerWidth);
-    console.log('innerHeight - ', this.innerHeight);
+    // console.log('innerWidth - ', this.innerWidth);
+    // console.log('innerHeight - ', this.innerHeight);
 
     if (this.innerWidth > 1024){
       this.cellsToShow = 5;
@@ -87,7 +87,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.carouselHeight = 800;
     }
 
-    console.log(this.cellsToShow);
+    // console.log(this.cellsToShow);
   }
 
   ngOnInit(): void {
@@ -105,9 +105,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.imgP = this.sanitizer.bypassSecurityTrustUrl(objectURL);
         this.caption = res[i][1].replace(this.re, '<br />');
         await this.delay(5000);
-        this.flag = true;
         this.cards.push([this.imgP, this.caption, res[i][2], res[i][3]]);
       }
+      this.flag = true;
       },
       console.error
     );
