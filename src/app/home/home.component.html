@@ -2,7 +2,7 @@
   <img class="example-margin" src="/assets/progress2.gif" alt=""/>
 </div>
 
-<mat-toolbar>
+<mat-toolbar *ngIf="flag==true">
   <img class="logo-class" src="assets/logo.png" alt="">
 
   <div *ngIf="innerWidth>500">
@@ -29,7 +29,7 @@
   </div>
 </mat-toolbar>
 
-<div class="content-class">
+<div class="content-class" *ngIf="flag==true">
   <br>
   <div class="top-class"><b>Le 10 Migliori Offerte</b></div>
   <br>
@@ -57,7 +57,7 @@
   </carousel>
 </div>
 
-<div class="footer">
+<div class="footer" *ngIf="flag==true">
 
   <div class="list-class">
     <span class="name-class-footer"><b>Offerte Nerd</b></span>
